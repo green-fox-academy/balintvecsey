@@ -1,0 +1,33 @@
+.Box {
+    width: 380px;
+    height: 550px;
+    border: 20px solid#4285f4;
+    padding: 0px;
+    margin: 0px;
+    text-align: center;
+    font-size: 36px;
+    font-family: arial;
+    color: white;
+}
+
+.North, .East, .South, .West {
+  height: 25%;
+}
+
+.North {
+  background-color: rgb(230, 118, 118);
+}
+.East {
+  background-color: rgb(242, 240, 98);
+}
+.South {
+  background-color: rgb(169, 230, 230);
+}
+.West {
+  background-color: rgb(118, 146, 228);
+}
+
+p {
+  margin: 0px;
+  padding: 55px;
+}

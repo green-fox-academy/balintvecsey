@@ -1,0 +1,24 @@
+.Box   {
+    width: 380px;
+    height: 275px;
+    border: 15px solid#4285f4;
+    padding: 0px;
+    margin: 5px;
+    text-align: center;
+    font-size: 36px;
+    font-family: arial;
+    color: white;
+}
+.North {
+  height: 50%;
+  background-color: rgb(230, 118, 118);
+}
+.South {
+  height: 50%;
+  background-color: rgb(169, 230, 230);
+}
+
+p {
+  margin: 0px;
+  padding: 40px;
+}

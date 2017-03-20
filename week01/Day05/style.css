@@ -1,0 +1,107 @@
+img {
+    width: 1250px;
+    position: absolute;
+}
+
+body {
+  width: 1250px;
+  margin-top: 0;
+  margin: auto;
+  font-family: 'Roboto', sans-serif;
+  line-height: 1;
+  margin-bottom: 36px;
+}
+
+header {
+  font-family: 'Abril Fatface', cursive;
+  color: rgba(0, 0, 0, 0.75);
+  padding-top: 220px;
+  padding-bottom: 30px;
+}
+
+main, header {
+  width: 800px;
+  margin: 0 auto;
+  position: relative;
+}
+
+main{
+  line-height: 200%;
+}
+
+div {
+  width: 700px;
+  margin:auto;
+}
+
+h1 {
+  font-size: 36px;
+  margin-bottom: 0;
+}
+
+h2 {
+  font-size: 72px;
+  margin-top: 0;
+}
+
+h3 {
+  font-size: 24px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-top: 48px;
+  margin-bottom: 48px;
+}
+
+h4 {
+  font-size: 24px;
+  margin-bottom: 0;
+}
+
+h5 {
+  font-size: 16px;
+  font-style: italic;
+  margin: 0;
+}
+
+.intro {
+  font-size: 18px;
+}
+
+.introlist {
+  font-size: 18px;
+}
+
+.explain {
+  font-size: 16px;
+  line-height: 150%;
+}
+
+ul {
+  font-size: 16px;
+  line-height: 150%;
+  margin-top: 12px;
+}
+
+.line{
+  width: 700px;
+  display: block;
+  padding-left: 100px;
+  border: solid 2px;
+  margin-top: 48px;
+  margin-bottom: 48px;
+}
+
+blockquote {
+  width: 750px;
+  padding: 50px;
+  margin: auto;
+  font-family: 'Abril Fatface', cursive;
+  background-color: rgb(64, 64, 64);
+  color: white;
+  font-size: 48px;
+  line-height: 150%;
+  background-image: url(img/openquote.png);
+  background-position: top left;
+  background-repeat: no-repeat;
+  background-size: 56px;
+}

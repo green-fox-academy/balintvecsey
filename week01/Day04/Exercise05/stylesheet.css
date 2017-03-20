@@ -1,0 +1,24 @@
+h1 {
+  color: blue;
+}
+
+h2 {
+  color: orange;
+}
+
+.category {
+  list-style: square;
+  color: blue;
+}
+
+.fruit, .vegetables{
+  color: black;
+}
+
+.fruit {
+  list-style: disc;
+}
+
+.apple {
+  color: red;
+}
