@@ -1,2 +1,2 @@
 # Bálint Vecsey#
-[https://github.com/greenfox-academy/eagles-syllabus/projects]
+eagles-syllabus(https://github.com/greenfox-academy/eagles-syllabus/)
