@@ -9,9 +9,15 @@ public class Sum {
 
     // - Write a function called `sum` that sum all the numbers
     //   until the given parameter
-
+    System.out.println(sumFunction(5));
   }
 
-  public static int sumFunction
+  public static int sumFunction(int until ){
+    int sum = 0;
+    for (int i = 0; i <= until; i++) {
+      sum = sum + i;
+    }
+    return sum;
+  }
 
 }
