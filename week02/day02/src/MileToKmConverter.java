@@ -7,7 +7,7 @@ import java.util.Scanner;
 // then it converts that value to miles and prints it
 
 public class MileToKmConverter {
-    
+
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
