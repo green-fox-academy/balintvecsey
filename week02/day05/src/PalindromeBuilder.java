@@ -11,10 +11,10 @@ public class PalindromeBuilder {
     String word = scan.nextLine();
 
     if (word.isEmpty()) {
-      System.out.println("");
+      System.out.println();
     }
 
-    System.out.println(createPalindrome(word));
+    System.out.println("\"" + createPalindrome(word) + "\"");
   }
 
   public static String createPalindrome(String word) {
