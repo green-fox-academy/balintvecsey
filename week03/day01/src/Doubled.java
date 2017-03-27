@@ -18,7 +18,6 @@ public class Doubled {
       for (String line : lines) {
 
         System.out.println(line.replaceAll("(.).", "$1"));
-        line.replace
       }
     } catch (Exception ex) {
       System.out.println("Error: " + ex.getClass());
