@@ -12,7 +12,16 @@ public class PurpleSteps {
   public static void mainDraw(Graphics graphics){
     // reproduce this:
     // [https://github.com/greenfox-academy/teaching-materials/blob/master/exercises/drawing/purple-steps/r3.png]
+    for (int i = 10; i < 200 ; i+=10) {
+      graphics.setColor(Color.black);
+      graphics.drawRect(i, i, 10, 10);
+      graphics.setColor(new Color(153, 51, 153));
+      graphics.fillRect(i, i, 10, 10);
+    }
 
+    /*graphics.drawRect(corner, corner, size, size);
+    graphics.setColor(new Color(153, 51, 153));
+    graphics.fillRect(corner, corner, size, size);*/
 
 
   }
