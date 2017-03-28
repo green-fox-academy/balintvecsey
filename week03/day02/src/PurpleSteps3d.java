@@ -7,19 +7,26 @@ import java.awt.*;
 
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
-public class PurpleSteps {
+public class PurpleSteps3d {
 
   public static void mainDraw(Graphics graphics){
     // reproduce this:
-    // [https://github.com/greenfox-academy/teaching-materials/blob/master/exercises/drawing/purple-steps/r3.png]
+    // [https://github.com/greenfox-academy/teaching-materials/blob/master/exercises/drawing/purple-steps-3d/r4.png]
+    int corner = 10;
     int size = 10;
 
-    for (int i = 10; i < 200 ; i+=10) {
+    for (int i = 0; i < 60 ; i+=10) {
       graphics.setColor(Color.black);
-      graphics.drawRect(i, i, size, size);
+      graphics.drawRect(corner, corner, size, size);
       graphics.setColor(new Color(153, 51, 153));
-      graphics.fillRect(i, i, size, size);
+      graphics.fillRect(corner, corner, size, size);
+
+      corner += size;
+      size += 10;
+
     }
+
+
 
   }
 
