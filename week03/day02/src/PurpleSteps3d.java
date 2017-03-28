@@ -23,11 +23,7 @@ public class PurpleSteps3d {
 
       corner += size;
       size += 10;
-
     }
-
-
-
   }
 
   //    Don't touch the code below
