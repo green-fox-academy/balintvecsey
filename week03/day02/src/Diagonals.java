@@ -2,19 +2,21 @@
  * Created by Bálint on 2017. 03. 28..
  */
 import javax.swing.*;
+
 import java.awt.*;
+
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
-public class LineInTheMiddle {
+public class Diagonals {
 
   public static void mainDraw(Graphics graphics){
-    //  draw a red horizontal line to the canvas' middle.
-    //  draw a green vertical line to the canvas' middle.
-    graphics.setColor(Color.red);
-    graphics.drawLine(0, 150, 300, 150);
+    // draw the canvas' diagonals in green.
+    graphics.setColor(Color.green);
+    graphics.drawLine(0, 0, 300, 300);
 
     graphics.setColor(Color.green);
-    graphics.drawLine(150, 0, 150, 300);
+    graphics.drawLine(0, 300, 300, 0);
+
   }
 
   //    Don't touch the code below

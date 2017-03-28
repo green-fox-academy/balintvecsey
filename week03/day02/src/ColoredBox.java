@@ -2,19 +2,27 @@
  * Created by Bálint on 2017. 03. 28..
  */
 import javax.swing.*;
+
 import java.awt.*;
+
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
-public class LineInTheMiddle {
+public class ColoredBox {
 
   public static void mainDraw(Graphics graphics){
-    //  draw a red horizontal line to the canvas' middle.
-    //  draw a green vertical line to the canvas' middle.
+    // draw a box that has different colored lines on each edge.
     graphics.setColor(Color.red);
-    graphics.drawLine(0, 150, 300, 150);
+    graphics.drawLine(20, 20, 220, 20);
+
+    graphics.setColor(Color.blue);
+    graphics.drawLine(20, 120, 220, 120);
 
     graphics.setColor(Color.green);
-    graphics.drawLine(150, 0, 150, 300);
+    graphics.drawLine(20, 20, 20, 120);
+
+    graphics.setColor(Color.yellow);
+    graphics.drawLine(220, 20, 220, 120);
+
   }
 
   //    Don't touch the code below

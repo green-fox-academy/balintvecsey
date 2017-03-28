@@ -2,19 +2,30 @@
  * Created by Bálint on 2017. 03. 28..
  */
 import javax.swing.*;
+
 import java.awt.*;
+
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
-public class LineInTheMiddle {
+public class GoToCenter {
 
   public static void mainDraw(Graphics graphics){
-    //  draw a red horizontal line to the canvas' middle.
-    //  draw a green vertical line to the canvas' middle.
+    // create a line drawing function that takes 2 parameters:
+    // the x and y coordinates of the line's starting point
+    // and draws a line from that point to the center of the canvas.
+    // draw 3 lines with that function.
     graphics.setColor(Color.red);
-    graphics.drawLine(0, 150, 300, 150);
+    toTheCenter(0, 0, graphics);
 
     graphics.setColor(Color.green);
-    graphics.drawLine(150, 0, 150, 300);
+    toTheCenter(50, 10, graphics);
+
+    graphics.setColor(Color.blue);
+    toTheCenter(0, 100, graphics);
+  }
+
+  public static void toTheCenter(int x, int y, Graphics g) {
+    g.drawLine(x, y, 150, 150);
   }
 
   //    Don't touch the code below
