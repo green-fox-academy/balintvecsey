@@ -10,17 +10,26 @@ import javax.swing.JPanel;
  * Created by Bálint on 2017. 03. 30..
  */
 public class Fractal {
+
+
   public static void Fractal(Graphics graphics){
 
+    int min = 0;
+    int max = 300;
     graphics.setColor(Color.yellow);
-    graphics.fillRect(0, 0, 300, 300);
+    graphics.fillRect(min, min, max, max);
+    graphics.setColor(Color.black);
     fractRect(graphics);
   }
 
   public static void fractRect(Graphics g) {
 
-
-
+    int min = 0;
+    int max = 300;
+    g.drawLine(min, min, max, min);
+    g.drawLine(min, min, min, max);
+    g.drawLine(max, min, max, max);
+    g.drawLine(min, max, max, max);
   }
 
   //    Don't touch the code below
