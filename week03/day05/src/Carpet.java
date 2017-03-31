@@ -30,7 +30,6 @@ public class Carpet {
       recur(x - w, y ,w / 3, h / 3, g);
       recur(x + w, y ,w / 3, h / 3, g);
 
-
       recur(x + w, y + h,w / 3, h / 3, g);
       recur(x - w, y - h,w / 3, h / 3, g);
       recur(x - w, y + h,w / 3, h / 3, g);
@@ -54,7 +53,6 @@ public class Carpet {
       super.paintComponent(graphics);
       setBackground(Color.white);
       mainDraw(graphics);
-
     }
   }
 }
