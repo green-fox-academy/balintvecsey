@@ -16,7 +16,8 @@ public class Carpet {
   }
 
   public static void carpet(int x, int y, int w, int h, Graphics g) {
-    g.setColor(Color.black);
+    int color = (int) (Math.random() * 16777215);
+    g.setColor(new Color(color));
     g.fillRect(x - w / 2, y - h / 2, w, h);
   }
 
