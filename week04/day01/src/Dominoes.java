@@ -11,10 +11,24 @@ public class Dominoes {
     // Order them into one snake where the adjacent dominoes have the same numbers on their adjacent sides
     // eg: [2, 4], [4, 3], [3, 5] ...
 
+    dominoes = newOrder(dominoes);
     System.out.println(dominoes);
+  }
 
-    //5-2, 2-4, 4-6, 6-7, 7-1, 1-5
+  static List<Domino> newOrder(List<Domino> dominoes){
+    int i = 0;
+    int j = 1;
 
+    while (j < dominoes.size()) {
+      if (dominoes.get(i).getValues()[1] == dominoes.get(j).getValues()[0]) {
+        dominoes.add(i + 1, dominoes.remove(j));
+        i++;
+        j = i + 1;
+      } else {
+        j++;
+      }
+    }
+    return dominoes;
   }
 
   static List<Domino> initializeDominoes() {
