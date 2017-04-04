@@ -3,35 +3,28 @@ package TheGarden;
 /**
  * Created by Bálint on 2017. 04. 04..
  */
-public class Flower {
-  String className;
-  String color;
-  int waterAmount;
+public class Flower extends Plants{
+
 
   public Flower(String color){
-    this.color = color;
+    super.color = color;
     className = "Flower";
     waterAmount = 0;
   }
 
-  public void checkWater(){
+  public boolean checkWater(){
+    boolean isThirsty = false;
     if (waterAmount < 5) {
       System.out.println("The " + color + " " + className + " needs water.");
+      isThirsty = true;
     } else {
       System.out.println("The " + color + " " + className + " doesn't needs water.");
     }
+    return isThirsty;
   }
 
   public void watering(int waterUnit){
-    System.out.println("Watering with " + waterUnit);
     waterUnit *= 0.75f;
     waterAmount += waterUnit;
-  }
-
-  public static void main(String[] args) {
-    Flower flower = new Flower("yellow");
-    flower.checkWater();
-    flower.watering(40);
-    flower.checkWater();
   }
 }
