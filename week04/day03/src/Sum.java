@@ -13,9 +13,13 @@ public class Sum{
   }
 
   public int getSum(){
-    for (int i = 0; i < numbers.size(); i++) {
-      sum += numbers.get(i);
+    if (numbers != null) {
+      for (int i = 0; i < numbers.size(); i++) {
+        sum += numbers.get(i);
+      }
+      return sum;
+    } else {
+      return 0;
     }
-    return sum;
   }
 }
