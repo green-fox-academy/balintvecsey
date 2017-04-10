@@ -7,12 +7,11 @@ import javax.imageio.ImageIO;
 /**
  * Created by Bálint on 2017. 04. 10..
  */
-public class GameObjects {
-
+public class Tile {
   BufferedImage image;
   int posX, posY;
 
-  public GameObjects (String filename, int posX, int posY) {
+  public Tile(String filename, int posX, int posY) {
     this.posX = posX;
     this.posY = posY;
     try {
