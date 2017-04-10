@@ -9,18 +9,24 @@ import javax.imageio.ImageIO;
  */
 public class GameObjects {
 
+  public static final int TILE_WIDTH = 72;
+  public static final int TILE_HEIGHT = 72;
+
   BufferedImage image;
   int posX, posY;
 
   public GameObjects (String filename, int posX, int posY) {
     this.posX = posX;
     this.posY = posY;
+    setImage(filename);
+  }
+
+  public void setImage(String filename) {
     try {
       image = ImageIO.read(new File(filename));
     } catch (IOException e) {
       e.printStackTrace();
     }
-
   }
 
   public void draw(Graphics graphics) {

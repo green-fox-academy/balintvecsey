@@ -4,18 +4,22 @@ import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.List;
 import javax.swing.JComponent;
 import javax.swing.JFrame;
 
 /**
  * Created by Bálint on 2017. 04. 10..
  */
-public class Area extends JComponent implements KeyListener{
+public class Area extends JComponent implements KeyListener {
 
   int heroX;
   int heroY;
   String facing;
-
 
   public Area() {
     heroX = 0;
@@ -31,86 +35,24 @@ public class Area extends JComponent implements KeyListener{
   public void paint(Graphics graphics) {
     super.paint(graphics);
     int unit = 72;
-    //graphics.fillRect(testBoxX, testBoxY, 100, 100);
-    // here you have a 720x720 canvas
-    // you can create and draw an image using the class below e.g.
-    for (int i = 0; i < 10; i++) {
-      for (int j = 0; j < 10; j++) {
-        Floor image = new Floor(i * unit, j * unit);
-        image.draw(graphics);
+
+    Path path = Paths.get("assets/board.txt");
+    try {
+      List<String> lines = Files.readAllLines(path);
+
+      for (int i = 0; i < lines.size(); i++) {
+        for (int j = 0; j < lines.size(); j++) {
+          if (lines.get(j).charAt(i) == '0') {
+            Floor image = new Floor(i * unit, j * unit);
+            image.draw(graphics);
+          } else {
+            Wall image = new Wall(i * unit, j * unit);
+            image.draw(graphics);
+          }
+        }
       }
-    }
-
-    //Vertical walls
-    for (int i = 6; i < 8; i++) {
-      Wall image = new Wall(unit, i * 72);
-      image.draw(graphics);
-    }
-
-    for (int i = 0; i < 3; i++) {
-      Wall image = new Wall(unit * 3, i * 72);
-      image.draw(graphics);
-    }
-
-    for (int i = 4; i < 7; i++) {
-      Wall image = new Wall(unit * 3, i * 72);
-      image.draw(graphics);
-    }
-
-    for (int i = 8; i < 10; i++) {
-      Wall image = new Wall(unit * 3, i * 72);
-      image.draw(graphics);
-    }
-
-    for (int i = 0; i < 5; i++) {
-      Wall image = new Wall(unit * 5, i * 72);
-      image.draw(graphics);
-    }
-
-    for (int i = 6; i < 9; i++) {
-      Wall image = new Wall(unit * 5, i * 72);
-      image.draw(graphics);
-    }
-
-    for (int i = 1; i < 3; i++) {
-      Wall image = new Wall(unit * 7, i * 72);
-      image.draw(graphics);
-    }
-
-    for (int i = 1; i < 3; i++) {
-      Wall image = new Wall(unit * 8, i * 72);
-      image.draw(graphics);
-    }
-
-    //Horizontal walls
-    for (int i = 1; i < 3; i++) {
-      Wall image = new Wall(i * 72, unit * 2);
-      image.draw(graphics);
-    }
-
-    for (int i = 0; i < 3; i++) {
-      Tile image = new Wall(i * 72, unit * 4);
-      image.draw(graphics);
-    }
-
-    for (int i = 7; i < 10; i++) {
-      Tile image = new Wall(i * 72, unit * 4);
-      image.draw(graphics);
-    }
-
-    for (int i = 6; i < 10; i++) {
-      Tile image = new Wall(i * 72, unit * 6);
-      image.draw(graphics);
-    }
-
-    for (int i = 1; i < 3; i++) {
-      Tile image = new Wall(i * 72, unit * 8);
-      image.draw(graphics);
-    }
-
-    for (int i = 6; i < 9; i++) {
-      Tile image = new Wall(i * 72, unit * 8);
-      image.draw(graphics);
+    } catch (IOException e) {
+      e.printStackTrace();
     }
 
     Hero hero = new Hero(facing, heroX, heroY);
@@ -127,7 +69,6 @@ public class Area extends JComponent implements KeyListener{
   public void keyPressed(KeyEvent e) {
 
   }
-
   // But actually we can use just this one for our goals here
   @Override
   public void keyReleased(KeyEvent e) {
