@@ -4,7 +4,7 @@
 public class Skeleton extends Monster {
 
   public Skeleton() {
-    super.setImage("assets/skeleton.png");
+    super.image = ImageLoader.getInstance().SKELETON;
     super.posX = (int) (Math.random() * 9);
     super.posY = (int) (Math.random() * 9);
   }
