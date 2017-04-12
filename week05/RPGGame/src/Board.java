@@ -12,6 +12,7 @@ import javax.swing.JComponent;
  */
 public class Board extends JComponent implements KeyListener {
 
+  public static final int MAPSIZE = 720;
   int heroX, heroY;
   BufferedImage facing;
   Area area;
@@ -22,7 +23,7 @@ public class Board extends JComponent implements KeyListener {
     heroX = heroY = 0;
     facing = ImageLoader.getInstance().HERO_DOWN;
 
-    setPreferredSize(new Dimension(720, 720));
+    setPreferredSize(new Dimension(MAPSIZE, MAPSIZE));
     setVisible(true);
   }
 
@@ -62,13 +63,13 @@ public class Board extends JComponent implements KeyListener {
     if (e.getKeyCode() == KeyEvent.VK_UP && heroY != 0) {
       facing = ImageLoader.getInstance().HERO_UP;
       heroY --;
-    } else if (e.getKeyCode() == KeyEvent.VK_DOWN && heroY < 642) {
+    } else if (e.getKeyCode() == KeyEvent.VK_DOWN && heroY < MAPSIZE - 72) {
       facing = ImageLoader.getInstance().HERO_DOWN;
       heroY ++;
     } else if (e.getKeyCode() == KeyEvent.VK_LEFT && heroX != 0) {
       facing = ImageLoader.getInstance().HERO_LEFT;
       heroX --;
-    } else if (e.getKeyCode() == KeyEvent.VK_RIGHT && heroX < 642) {
+    } else if (e.getKeyCode() == KeyEvent.VK_RIGHT && heroX < MAPSIZE - 72) {
       facing = ImageLoader.getInstance().HERO_RIGHT;
       heroX ++;
     }

@@ -8,5 +8,4 @@ public class Wall extends GameObjects {
   public Wall(BufferedImage image, int posX, int posY) {
     super(image, posX, posY);
   }
-
 }
