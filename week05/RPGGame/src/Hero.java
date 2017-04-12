@@ -11,4 +11,19 @@ public class Hero extends GameObjects {
     this.posY --;
     setImage("assets/hero-up.png");
   }
+
+  public void moveDown() {
+    this.posY ++;
+    setImage("assets/hero-down.png");
+  }
+
+  public void moveLeft() {
+    this.posY --;
+    setImage("assets/hero-left.png");
+  }
+
+  public void moveRight() {
+    this.posY ++;
+    setImage("assets/hero-right.png");
+  }
 }
