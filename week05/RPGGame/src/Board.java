@@ -4,6 +4,7 @@ import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.awt.image.BufferedImage;
 import javax.swing.JComponent;
 
 /**
@@ -12,11 +13,14 @@ import javax.swing.JComponent;
 public class Board extends JComponent implements KeyListener {
 
   int heroX, heroY;
-  String facing;
+  BufferedImage facing;
+  Area area;
+  Hero hero;
+  Boss boss;
 
   public Board() {
     heroX = heroY = 0;
-    facing = "assets/hero-down.png";
+    facing = ImageLoader.getInstance().HERO_DOWN;
 
     setPreferredSize(new Dimension(720, 720));
     setVisible(true);
@@ -28,6 +32,16 @@ public class Board extends JComponent implements KeyListener {
 
     Area area = new Area();
     area.draw(graphics);
+
+    Skeleton skeleton1 = new Skeleton();
+    skeleton1.draw(graphics);
+    Skeleton skeleton2 = new Skeleton();
+    skeleton2.draw(graphics);
+    Skeleton skeleton3 = new Skeleton();
+    skeleton3.draw(graphics);
+
+    Boss boss = new Boss();
+    boss.draw(graphics);
 
     Hero hero = new Hero(facing, heroX, heroY);
     hero.draw(graphics);
@@ -46,16 +60,16 @@ public class Board extends JComponent implements KeyListener {
   @Override
   public void keyReleased(KeyEvent e) {
     if (e.getKeyCode() == KeyEvent.VK_UP && heroY != 0) {
-      facing = "assets/hero-up.png";
+      facing = ImageLoader.getInstance().HERO_UP;
       heroY --;
     } else if (e.getKeyCode() == KeyEvent.VK_DOWN && heroY < 642) {
-      facing = "assets/hero-down.png";
+      facing = ImageLoader.getInstance().HERO_DOWN;
       heroY ++;
     } else if (e.getKeyCode() == KeyEvent.VK_LEFT && heroX != 0) {
-      facing = "assets/hero-left.png";
+      facing = ImageLoader.getInstance().HERO_LEFT;
       heroX --;
     } else if (e.getKeyCode() == KeyEvent.VK_RIGHT && heroX < 642) {
-      facing = "assets/hero-right.png";
+      facing = ImageLoader.getInstance().HERO_RIGHT;
       heroX ++;
     }
 

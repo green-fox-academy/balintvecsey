@@ -17,10 +17,10 @@ public class GameObjects {
 
   public GameObjects() {}
 
-  public GameObjects (String filename, int posX, int posY) {
+  public GameObjects (BufferedImage image, int posX, int posY) {
     this.posX = posX;
     this.posY = posY;
-    setImage(filename);
+    this.image = image;
   }
 
   public void setImage(String filename) {
