@@ -15,6 +15,8 @@ public class GameObjects {
   BufferedImage image;
   int posX, posY;
 
+  public GameObjects() {}
+
   public GameObjects (String filename, int posX, int posY) {
     this.posX = posX;
     this.posY = posY;
@@ -31,7 +33,7 @@ public class GameObjects {
 
   public void draw(Graphics graphics) {
     if (image != null) {
-      graphics.drawImage(image, posX, posY, null);
+      graphics.drawImage(image, posX * TILE_WIDTH, posY * TILE_HEIGHT, null);
     }
   }
 }
