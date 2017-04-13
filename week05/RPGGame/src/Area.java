@@ -10,9 +10,8 @@ import java.util.List;
  */
 public class Area extends GameObjects {
 
-  boolean isWall = false;
-
-  public Area() {}
+  public Area() {
+  }
 
   public List<String> level() {
     Path path = Paths.get("assets/board.txt");
@@ -29,14 +28,20 @@ public class Area extends GameObjects {
     for (int i = 0; i < level().size(); i++) {
       for (int j = 0; j < level().size(); j++) {
         if (level().get(j).charAt(i) == '0') {
-          Floor image = new Floor(ImageLoader.getInstance().FLOOR ,i, j);
+          Floor image = new Floor(ImageLoader.getInstance().FLOOR, i, j);
           image.draw(g);
         } else {
           Wall image = new Wall(ImageLoader.getInstance().WALL, i, j);
           image.draw(g);
-          isWall = true;
         }
       }
     }
+  }
+
+  public boolean isWall(int x, int y) {
+    if (level().get(y).charAt(x) == '0') {
+      return false;
+    }
+    return true;
   }
 }
