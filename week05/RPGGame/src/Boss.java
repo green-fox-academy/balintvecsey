@@ -5,7 +5,7 @@ public class Boss extends Monster {
 
   public Boss() {
     super.image = ImageLoader.getInstance().BOSS;
-    super.posX = (int) (Math.random() * 9);
-    super.posY = (int) (Math.random() * 9);
+    super.posX = (int) (Math.random() * 10);
+    super.posY = (int) (Math.random() * 10);
   }
 }
