@@ -38,11 +38,11 @@ public class Board extends JComponent implements KeyListener {
 
     area.draw(graphics);
 
-    skeleton1.draw(graphics, area);
-    skeleton2.draw(graphics, area);
-    skeleton3.draw(graphics, area);
+    skeleton1.draw(graphics);
+    skeleton2.draw(graphics);
+    skeleton3.draw(graphics);
 
-    boss.draw(graphics, area);
+    boss.draw(graphics);
 
     Hero hero = new Hero(facing, heroX, heroY);
     hero.draw(graphics);
@@ -70,8 +70,7 @@ public class Board extends JComponent implements KeyListener {
     } else if (e.getKeyCode() == KeyEvent.VK_LEFT && heroX != 0 && !area.isWall(heroX - 1, heroY)) {
       facing = ImageLoader.getInstance().HERO_LEFT;
       heroX--;
-    } else if (e.getKeyCode() == KeyEvent.VK_RIGHT && heroX < MAPSIZE - 72 && !area
-        .isWall(heroX + 1, heroY)) {
+    } else if (e.getKeyCode() == KeyEvent.VK_RIGHT && heroX < MAPSIZE - 72 && !area.isWall(heroX + 1, heroY)) {
       facing = ImageLoader.getInstance().HERO_RIGHT;
       heroX++;
     }

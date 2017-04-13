@@ -13,7 +13,7 @@ public class Area extends GameObjects {
   public Area() {
   }
 
-  public List<String> level() {
+  public List<String> levelLoader() {
     Path path = Paths.get("assets/board.txt");
     try {
       List<String> lines = Files.readAllLines(path);
@@ -25,9 +25,9 @@ public class Area extends GameObjects {
   }
 
   public void draw(Graphics g) {
-    for (int i = 0; i < level().size(); i++) {
-      for (int j = 0; j < level().size(); j++) {
-        if (level().get(j).charAt(i) == '0') {
+    for (int i = 0; i < levelLoader().size(); i++) {
+      for (int j = 0; j < levelLoader().size(); j++) {
+        if (levelLoader().get(j).charAt(i) == '0') {
           Floor image = new Floor(ImageLoader.getInstance().FLOOR, i, j);
           image.draw(g);
         } else {
@@ -39,7 +39,7 @@ public class Area extends GameObjects {
   }
 
   public boolean isWall(int x, int y) {
-    if (level().get(y).charAt(x) == '0') {
+    if (levelLoader().get(y).charAt(x) == '0') {
       return false;
     }
     return true;
