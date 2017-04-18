@@ -1,3 +1,5 @@
+package homework;
+
 /**
  * Created by Bálint on 2017. 04. 17..
  */
