@@ -3,7 +3,7 @@ import java.awt.image.BufferedImage;
 /**
  * Created by Bálint on 2017. 04. 10..
  */
-public class Hero extends GameObjects {
+public class Hero extends GameObjects{
 
   public Hero() {}
   public Hero(BufferedImage image, int posX, int posY) {
