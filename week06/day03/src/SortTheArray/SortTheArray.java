@@ -16,7 +16,7 @@ public class SortTheArray {
       }
       System.out.println();
     } catch (Exception e){
-      System.out.println();
+      System.out.println("Oups, error: " + e.getClass());
     }
   }
 }
