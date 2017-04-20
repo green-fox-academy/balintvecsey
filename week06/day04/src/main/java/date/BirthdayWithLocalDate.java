@@ -1,9 +1,7 @@
 package date;
 
 import java.time.LocalDate;
-import java.time.Period;
 import java.time.format.DateTimeFormatter;
-import java.time.temporal.ChronoUnit;
 import java.util.Scanner;
 
 public class BirthdayWithLocalDate implements BirthdayCalculator<LocalDate> {
@@ -35,7 +33,9 @@ public class BirthdayWithLocalDate implements BirthdayCalculator<LocalDate> {
   @Override
   public int calculateDaysToNextAnniversary(LocalDate date) {
     // TODO - the number of days remaining to the next anniversary of 'date' (e.g. if tomorrow, return 1)
-    return (int) ChronoUnit.DAYS.between(date, LocalDate.now());
+    int current = LocalDate.now().getDayOfYear();
+    int anniversary = date.getDayOfYear();
+    return current == anniversary ? 0 : current < anniversary ? anniversary - current : (anniversary + 365) - current;
   }
 
   public static void main(String[] args) {
