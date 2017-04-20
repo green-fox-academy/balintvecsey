@@ -17,13 +17,13 @@ public class BirthdayWithLocalDate implements BirthdayCalculator<LocalDate> {
   @Override
   public String printMonthAndDay(LocalDate date) {
     // TODO - return the date formatted: month & day (MM. dd.)
-    return date.getMonth().toString() + "" + date.getDayOfMonth();
+    return date.getMonthValue() + ". " + date.getDayOfMonth() + ".";
   }
 
   @Override
   public boolean isAnniversaryToday(LocalDate date) {
     // TODO - return with true if today is the same month+day as date
-    return date == LocalDate.now();
+    return date != null ? date == LocalDate.now() : null;
   }
 
   @Override
@@ -35,7 +35,7 @@ public class BirthdayWithLocalDate implements BirthdayCalculator<LocalDate> {
   @Override
   public int calculateDaysToNextAnniversary(LocalDate date) {
     // TODO - the number of days remaining to the next anniversary of 'date' (e.g. if tomorrow, return 1)
-    return Period.between(LocalDate.now(), date).getDays();
+    return (int) ChronoUnit.DAYS.between(date, LocalDate.now());
   }
 
   public static void main(String[] args) {
