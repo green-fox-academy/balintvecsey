@@ -17,7 +17,7 @@ public class ParkingLot {
   }
 
   public List<Car> getParkinglot() {
-    return this.parkinglot;
+    return parkinglot;
   }
 
   public void countAndPrintType(List<Car> parkinglot) {
@@ -32,6 +32,20 @@ public class ParkingLot {
       }
     }
     System.out.println(typeCount);
+  }
+
+  public void countAndPrintColor(List<Car> parkinglot) {
+    HashMap<String, Integer> colorCount = new HashMap<>();
+
+    for (Car car : parkinglot) {
+      String color = car.getColor().toString();
+      if (colorCount.containsKey(color)){
+        colorCount.replace(color, colorCount.get(color) + 1);
+      } else {
+        colorCount.put(color, 1);
+      }
+    }
+    System.out.println(colorCount);
   }
 
   public ColorsOfCar randomColor(){

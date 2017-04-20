@@ -9,5 +9,6 @@ public class ParkingLotApp {
     ParkingLot p1 = new ParkingLot(256);
 
     p1.countAndPrintType(p1.getParkinglot());
+    p1.countAndPrintColor(p1.getParkinglot());
   }
 }
