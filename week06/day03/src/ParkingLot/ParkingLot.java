@@ -1,26 +1,40 @@
 package ParkingLot;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 /**
  * Created by Bálint on 2017. 04. 19..
  */
 public class ParkingLot {
+  List<Car> parkinglot = new ArrayList<>();
 
-  public static void main(String[] args) {
-    List<Car> parkinglot = new ArrayList<>();
-
-    for (int i = 0; i < 256; i++) {
+  public ParkingLot(int size){
+    for (int i = 0; i < size; i++) {
       parkinglot.add(i, new Car(randomColor(), randomType()));
-    }
-
-    for (Car car : parkinglot) {
-      System.out.println(car.toString());
     }
   }
 
-  public static ColorsOfCar randomColor(){
+  public List<Car> getParkinglot() {
+    return this.parkinglot;
+  }
+
+  public void countAndPrintType(List<Car> parkinglot) {
+    HashMap<String, Integer> typeCount = new HashMap<>();
+
+    for (Car car : parkinglot) {
+      String type = car.getType().toString();
+      if (typeCount.containsKey(type)){
+        typeCount.replace(type, typeCount.get(type) + 1);
+      } else {
+        typeCount.put(type, 1);
+      }
+    }
+    System.out.println(typeCount);
+  }
+
+  public ColorsOfCar randomColor(){
     int d8 = (int) (Math.random() * 8) + 1;
     if(d8 == 1){
       return ColorsOfCar.RED;
@@ -41,7 +55,7 @@ public class ParkingLot {
     }
   }
 
-  public static TypeOfCar randomType(){
+  public TypeOfCar randomType(){
     int d8 = (int) (Math.random() * 8) + 1;
     if(d8 == 1){
       return TypeOfCar.TOYOTA;

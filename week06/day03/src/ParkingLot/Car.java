@@ -12,6 +12,14 @@ public class Car {
     this.type = type;
   }
 
+  public TypeOfCar getType(){
+    return type;
+  }
+
+  public ColorsOfCar getColor(){
+    return color;
+  }
+
   @Override
   public String toString(){
     return color + " "+ type;
