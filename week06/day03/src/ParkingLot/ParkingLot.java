@@ -60,8 +60,9 @@ public class ParkingLot {
     HashMap.Entry<Car, Integer> max = null;
 
     for (HashMap.Entry<Car, Integer> e : common.entrySet()) {
-      if (max == null || e.getValue() > max.getValue())
+      if (max == null || e.getValue() > max.getValue()) {
         max = e;
+      }
     }
     System.out.println(max.getKey());
   }
@@ -89,22 +90,13 @@ public class ParkingLot {
 
   public TypeOfCar randomType() {
     int d8 = (int) (Math.random() * 8) + 1;
-    if (d8 == 1) {
-      return TypeOfCar.TOYOTA;
-    } else if (d8 == 2) {
-      return TypeOfCar.HONDA;
-    } else if (d8 == 3) {
-      return TypeOfCar.OPEL;
-    } else if (d8 == 4) {
-      return TypeOfCar.CITROEN;
-    } else if (d8 == 5) {
-      return TypeOfCar.RENAULT;
-    } else if (d8 == 6) {
-      return TypeOfCar.FIAT;
-    } else if (d8 == 7) {
-      return TypeOfCar.VOLKSWAGEN;
-    } else {
-      return TypeOfCar.SKODA;
-    }
+    return d8 == 1 ? TypeOfCar.TOYOTA
+        : d8 == 2 ? TypeOfCar.HONDA
+            : d8 == 3 ? TypeOfCar.OPEL
+                : d8 == 4 ? TypeOfCar.CITROEN
+                    : d8 == 5 ? TypeOfCar.RENAULT
+                        : d8 == 6 ? TypeOfCar.FIAT
+                            : d8 == 7 ? TypeOfCar.VOLKSWAGEN
+                                : TypeOfCar.SKODA;
   }
 }
