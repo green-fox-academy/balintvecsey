@@ -56,6 +56,6 @@ public class ParkingLot {
         max = e;
       }
     }
-    System.out.println(max.getKey());
+    System.out.println("Most common vehicle in the parking lot: " + max.getKey() + ".");
   }
 }
