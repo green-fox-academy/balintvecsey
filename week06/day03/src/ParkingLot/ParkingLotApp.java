@@ -1,7 +1,5 @@
 package ParkingLot;
 
-import java.util.Collections;
-
 /**
  * Created by Bálint on 2017. 04. 19..
  */

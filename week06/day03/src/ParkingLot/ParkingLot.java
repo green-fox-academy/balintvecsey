@@ -13,7 +13,7 @@ public class ParkingLot {
 
   public ParkingLot(int size) {
     for (int i = 0; i < size; i++) {
-      parkinglot.add(i, new Car(randomColor(), randomType()));
+      parkinglot.add(i, new Car(ColorOfCar.getRandomColor(), TypeOfCar.getRandomType()));
     }
   }
 
@@ -65,38 +65,5 @@ public class ParkingLot {
       }
     }
     System.out.println(max.getKey());
-  }
-
-  public ColorOfCar randomColor() {
-    int d8 = (int) (Math.random() * 8) + 1;
-    if (d8 == 1) {
-      return ColorOfCar.RED;
-    } else if (d8 == 2) {
-      return ColorOfCar.BLUE;
-    } else if (d8 == 3) {
-      return ColorOfCar.GREEN;
-    } else if (d8 == 4) {
-      return ColorOfCar.YELOW;
-    } else if (d8 == 5) {
-      return ColorOfCar.GRAY;
-    } else if (d8 == 6) {
-      return ColorOfCar.BLACK;
-    } else if (d8 == 7) {
-      return ColorOfCar.WHITE;
-    } else {
-      return ColorOfCar.ORANGE;
-    }
-  }
-
-  public TypeOfCar randomType() {
-    int d8 = (int) (Math.random() * 8) + 1;
-    return d8 == 1 ? TypeOfCar.TOYOTA
-        : d8 == 2 ? TypeOfCar.HONDA
-            : d8 == 3 ? TypeOfCar.OPEL
-                : d8 == 4 ? TypeOfCar.CITROEN
-                    : d8 == 5 ? TypeOfCar.RENAULT
-                        : d8 == 6 ? TypeOfCar.FIAT
-                            : d8 == 7 ? TypeOfCar.VOLKSWAGEN
-                                : TypeOfCar.SKODA;
   }
 }
