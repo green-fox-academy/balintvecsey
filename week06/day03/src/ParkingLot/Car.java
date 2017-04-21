@@ -5,9 +5,9 @@ package ParkingLot;
  */
 public class Car {
   TypeOfCar type;
-  ColorsOfCar color;
+  ColorOfCar color;
 
-  public Car(ColorsOfCar color, TypeOfCar type){
+  public Car(ColorOfCar color, TypeOfCar type){
     this.color = color;
     this.type = type;
   }
@@ -16,7 +16,7 @@ public class Car {
     return type;
   }
 
-  public ColorsOfCar getColor(){
+  public ColorOfCar getColor(){
     return color;
   }
 

@@ -1,5 +1,5 @@
 package ParkingLot;
 
-public enum ColorsOfCar {
+public enum ColorOfCar {
   RED, BLUE, GREEN, YELOW, GRAY, BLACK, WHITE, ORANGE
 }

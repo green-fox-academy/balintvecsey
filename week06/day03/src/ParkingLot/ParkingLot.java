@@ -22,10 +22,10 @@ public class ParkingLot {
   }
 
   public void countAndPrintType(List<Car> parkinglot) {
-    HashMap<String, Integer> typeCount = new HashMap<>();
+    HashMap<TypeOfCar, Integer> typeCount = new HashMap<>();
 
     for (Car car : parkinglot) {
-      String type = car.getType().toString();
+      TypeOfCar type = car.getType();
       if (typeCount.containsKey(type)) {
         typeCount.replace(type, typeCount.get(type) + 1);
       } else {
@@ -36,10 +36,10 @@ public class ParkingLot {
   }
 
   public void countAndPrintColor(List<Car> parkinglot) {
-    HashMap<String, Integer> colorCount = new HashMap<>();
+    HashMap<ColorOfCar, Integer> colorCount = new HashMap<>();
 
     for (Car car : parkinglot) {
-      String color = car.getColor().toString();
+      ColorOfCar color = car.getColor();
       if (colorCount.containsKey(color)) {
         colorCount.replace(color, colorCount.get(color) + 1);
       } else {
@@ -65,25 +65,25 @@ public class ParkingLot {
     }
     System.out.println(max.getKey());
   }
-  
-  public ColorsOfCar randomColor() {
+
+  public ColorOfCar randomColor() {
     int d8 = (int) (Math.random() * 8) + 1;
     if (d8 == 1) {
-      return ColorsOfCar.RED;
+      return ColorOfCar.RED;
     } else if (d8 == 2) {
-      return ColorsOfCar.BLUE;
+      return ColorOfCar.BLUE;
     } else if (d8 == 3) {
-      return ColorsOfCar.GREEN;
+      return ColorOfCar.GREEN;
     } else if (d8 == 4) {
-      return ColorsOfCar.YELOW;
+      return ColorOfCar.YELOW;
     } else if (d8 == 5) {
-      return ColorsOfCar.GRAY;
+      return ColorOfCar.GRAY;
     } else if (d8 == 6) {
-      return ColorsOfCar.BLACK;
+      return ColorOfCar.BLACK;
     } else if (d8 == 7) {
-      return ColorsOfCar.WHITE;
+      return ColorOfCar.WHITE;
     } else {
-      return ColorsOfCar.ORANGE;
+      return ColorOfCar.ORANGE;
     }
   }
 
