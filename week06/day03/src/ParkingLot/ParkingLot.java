@@ -21,35 +21,27 @@ public class ParkingLot {
     return parkinglot;
   }
 
-  public void countAndPrintType(List<Car> parkinglot) {
+  public void typeCountAndPrint(List<Car> parkinglot) {
     HashMap<TypeOfCar, Integer> typeCount = new HashMap<>();
 
     for (Car car : parkinglot) {
-      TypeOfCar type = car.getType();
-      if (typeCount.containsKey(type)) {
-        typeCount.replace(type, typeCount.get(type) + 1);
-      } else {
-        typeCount.put(type, 1);
-      }
+      Integer val = typeCount.get(car.getType());
+      typeCount.put(car.getType(), val == null ? 1 : val + 1);
     }
     System.out.println(typeCount);
   }
 
-  public void countAndPrintColor(List<Car> parkinglot) {
+  public void colorCountAndPrint(List<Car> parkinglot) {
     HashMap<ColorOfCar, Integer> colorCount = new HashMap<>();
 
     for (Car car : parkinglot) {
-      ColorOfCar color = car.getColor();
-      if (colorCount.containsKey(color)) {
-        colorCount.replace(color, colorCount.get(color) + 1);
-      } else {
-        colorCount.put(color, 1);
-      }
+      Integer val = colorCount.get(car.getColor());
+      colorCount.put(car.getColor(), val == null ? 1 : val + 1);
     }
     System.out.println(colorCount);
   }
 
-  public void mostCommonVehicle(List<Car> parkinglot) {
+  public void vehicleMostCommon(List<Car> parkinglot) {
     HashMap<Car, Integer> common = new HashMap<>();
 
     for (Car car : parkinglot) {
