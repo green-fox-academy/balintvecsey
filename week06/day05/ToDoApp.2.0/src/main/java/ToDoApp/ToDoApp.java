@@ -4,6 +4,9 @@ import com.opencsv.CSVReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.List;
 import joptsimple.OptionParser;
 import joptsimple.OptionSet;
@@ -24,8 +27,12 @@ public class ToDoApp {
 
     CSVReader reader = null;
     try {
-      reader = new CSVReader(new FileReader("~/assets/todolist.csv"));
+      reader = new CSVReader(new FileReader("assets/todolist.csv"));
       List<String[]> lines = reader.readAll();
+
+      if (args.length == 0){
+        printUsage();
+      }
 
       if (optionSet.has("l")) {}
 
@@ -43,6 +50,19 @@ public class ToDoApp {
       e.printStackTrace();
     } catch (IOException e) {
       e.printStackTrace();
+    }
+  }
+
+  public static void printUsage() {
+    try {
+      Path path = Paths.get("assets/usage.csv");
+      List<String> lines = Files.readAllLines(path);
+
+      for (String usage : lines) {
+        System.out.println(usage);
+      }
+    } catch (Exception e) {
+      System.out.println("Error: " + e.getClass());
     }
   }
 }
