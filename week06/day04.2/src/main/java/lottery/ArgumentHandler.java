@@ -8,7 +8,13 @@ public class ArgumentHandler {
   public void argumentHandler(String[] args) {
     FileHandler data = new FileHandler();
 
-    if(args[0].contains("y")) {
+    if(args.length == 0) {
+      System.out.println("Error, please use in this format: -y [year]");
+    } else if(args[2].contains("o") || args[4].contains("o")) {
+
+    } else if(args[2].contains("f")) {
+
+    } else if(args[0].contains("y")) {
       data.fileWriter(args);
     }
   }
