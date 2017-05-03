@@ -20,7 +20,10 @@
     <td th:text="${bank.name}">name</td>
     <td th:text="${#numbers.formatDecimal(bank.balance, 0, 'COMMA', 2, 'POINT') + ' Z'}">balance</td>
     <td th:text="${bank.animalType}">animal</td>
-    <td th:text="${bank.isGood ? 'Good One' : 'Bad Guy'}">charachter</td>
+    <td th:switch="${bank.isGood}">
+      <span th:case="true" th:text="'Good One'">character</span>
+      <span th:case="false" th:text="'Bad Guy'">character</span>
+    </td>
   </tr>
   </tbody>
 </table>
