@@ -27,11 +27,11 @@ public class LionKingWebController {
   @RequestMapping("/Exercise5")
   public String exercise5(Model model) {
     List<BankAccount2> bank = new ArrayList<>();
-    bank.add(new BankAccount2("Simba", "2000", "lion", true));
-    bank.add(new BankAccount2("Nala", "500", "lion", false));
-    bank.add(new BankAccount2("Zordon", "3000", "lion", true));
-    bank.add(new BankAccount2("Timon", "1", "meerkat", false));
-    bank.add(new BankAccount2("Pumba", "2", "warthog", false));
+    bank.add(new BankAccount2("Simba", "2000", "lion", true, true));
+    bank.add(new BankAccount2("Nala", "500", "lion", false, true));
+    bank.add(new BankAccount2("Zordon", "3000", "lion", true, false));
+    bank.add(new BankAccount2("Timon", "1", "meerkat", false, true));
+    bank.add(new BankAccount2("Pumba", "2", "warthog", false, true));
     model.addAttribute("bank", bank);
     return "BankAccountList";
   }

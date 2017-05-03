@@ -12,9 +12,13 @@ import lombok.Setter;
 @AllArgsConstructor
 public class BankAccount2 {
   String name, balance, animalType;
-  boolean isKing;
+  boolean isKing,isGood;
 
   public boolean getIsKing() {
     return isKing;
+  }
+
+  public boolean getIsGood() {
+    return isGood;
   }
 }
