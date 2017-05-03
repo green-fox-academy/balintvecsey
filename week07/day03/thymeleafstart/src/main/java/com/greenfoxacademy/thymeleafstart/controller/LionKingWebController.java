@@ -28,8 +28,8 @@ public class LionKingWebController {
     bank.add(new BankAccount("Simba", "2000", "lion"));
     bank.add(new BankAccount("Nala", "500", "lion"));
     bank.add(new BankAccount("Zordon", "3000", "lion"));
-    bank.add(new BankAccount("Timon", "0", "meerkat"));
-    bank.add(new BankAccount("Pumba", "0", "warthog"));
+    bank.add(new BankAccount("Timon", "1", "meerkat"));
+    bank.add(new BankAccount("Pumba", "2", "warthog"));
     model.addAttribute("bank", bank);
     return "BankAccountList";
   }
