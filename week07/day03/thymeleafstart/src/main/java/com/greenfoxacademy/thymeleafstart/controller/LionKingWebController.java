@@ -1,6 +1,8 @@
 package com.greenfoxacademy.thymeleafstart.controller;
 
 import com.greenfoxacademy.thymeleafstart.model.BankAccount;
+
+import com.greenfoxacademy.thymeleafstart.model.BankAccount2;
 import java.util.ArrayList;
 import java.util.List;
 import org.springframework.stereotype.Controller;
@@ -24,12 +26,12 @@ public class LionKingWebController {
 
   @RequestMapping("/Exercise5")
   public String exercise5(Model model) {
-    List<BankAccount> bank = new ArrayList<>();
-    bank.add(new BankAccount("Simba", "2000", "lion"));
-    bank.add(new BankAccount("Nala", "500", "lion"));
-    bank.add(new BankAccount("Zordon", "3000", "lion"));
-    bank.add(new BankAccount("Timon", "1", "meerkat"));
-    bank.add(new BankAccount("Pumba", "2", "warthog"));
+    List<BankAccount2> bank = new ArrayList<>();
+    bank.add(new BankAccount2("Simba", "2000", "lion", true));
+    bank.add(new BankAccount2("Nala", "500", "lion", false));
+    bank.add(new BankAccount2("Zordon", "3000", "lion", true));
+    bank.add(new BankAccount2("Timon", "1", "meerkat", false));
+    bank.add(new BankAccount2("Pumba", "2", "warthog", false));
     model.addAttribute("bank", bank);
     return "BankAccountList";
   }

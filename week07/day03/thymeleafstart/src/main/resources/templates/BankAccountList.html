@@ -6,6 +6,7 @@
   <meta charset="utf-8" />
 </head>
 <body>
-  <p th:each="bank : ${bank}" th:text="${bankStat.index} + ' Name: ' + ${bank.name} + ', balance: ' + ${#numbers.formatDecimal(bank.balance, 0, 'COMMA', 2, 'POINT')} + ' Zebra, type: ' + ${bank.animalType} +'.'"/>
+  <p th:each="bank : ${bank}" th:if="${bank.isKing}" th:style="'color: orange'" th:text="${bankStat.index} + ' Name: ' + ${bank.name} + ', balance: ' + ${#numbers.formatDecimal(bank.balance, 0, 'COMMA', 2, 'POINT')} + ' Zebra, type: ' + ${bank.animalType} +'.'"/>
+  <p th:each="bank : ${bank}" th:unless="${bank.isKing}" th:text="${bankStat.index} + ' Name: ' + ${bank.name} + ', balance: ' + ${#numbers.formatDecimal(bank.balance, 0, 'COMMA', 2, 'POINT')} + ' Zebra, type: ' + ${bank.animalType} +'.'"/>
 </body>
 </html>
