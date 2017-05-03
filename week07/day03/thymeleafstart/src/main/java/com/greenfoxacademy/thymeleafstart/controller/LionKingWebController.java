@@ -33,6 +33,6 @@ public class LionKingWebController {
     bank.add(new BankAccount2("Timon", "1", "meerkat", false, true));
     bank.add(new BankAccount2("Pumba", "2", "warthog", false, true));
     model.addAttribute("bank", bank);
-    return "BankAccountList";
+    return "BankAccountList2";
   }
 }
