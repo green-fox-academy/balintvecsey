@@ -1,4 +1,4 @@
-package com.greenfoxacademy;
+package com.greenfoxacadamy;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

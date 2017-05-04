@@ -1,4 +1,4 @@
-package com.greenfoxacademy;
+package com.greenfoxacadamy;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
