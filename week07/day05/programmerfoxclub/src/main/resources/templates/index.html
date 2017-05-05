@@ -6,14 +6,14 @@
 </head>
 <body>
   <ul>
-    <li><a th:href="">Information</a></li>
+    <li><a th:href="@{/}">Information</a></li>
   </ul>
   <img src="greenfox.png" />
-  <p>This is Mr. Fox. Currently living on pizza and lemonade. He knows 2 tricks.</p>
+  <p th:text="'This is ' + ${fox.name} + '. Currently living on ' + ${fox.food} + ' and ' + ${fox.drink} + '. He knows ' + ${fox.tricks.size()} + ' tricks.'"></p>
   <h1>Known Tricks</h1>
-  <ul>
-    <li>write Html</li>
-    <li>code in JAVA</li>
+  <p th:if="${fox.tricks.size()} eq 0" th:text="'You know no tricks, yet. Go and learn some.'" />
+  <ul th:if="${fox.tricks.size()} gt 0" th:each="trick : ${fox.tricks}">
+    <li></li>
   </ul>
 </body>
 </html>
