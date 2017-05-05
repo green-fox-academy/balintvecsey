@@ -23,4 +23,12 @@ public class MainController {
 
     return m;
   }
+
+  @RequestMapping("/nutritionStore")
+  public ModelAndView nutritionStore() {
+    ModelAndView m = new ModelAndView();
+    m.setViewName("nutritionstore");
+
+    return m;
+  }
 }
