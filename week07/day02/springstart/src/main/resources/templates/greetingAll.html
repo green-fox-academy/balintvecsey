@@ -5,6 +5,9 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 </head>
 <body>
-<p th:style="'font-size:' + ${size} + '; color:' + ${color}" th:each="hello : ${hello}" th:text="${hello} + ', ' + ${name} + '!'"/>
+  <span th:each="hello : ${greetings}"
+        th:text="${hello.getText()} + ', ' + ${name} + '!'"
+        th:style="'font-size:' + ${hello.getSize()} + '; color:' + ${hello.getColor()}">
+  </span>
 </body>
 </html>
