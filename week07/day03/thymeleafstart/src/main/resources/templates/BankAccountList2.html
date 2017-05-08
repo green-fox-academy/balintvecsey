@@ -14,6 +14,7 @@
     <th>Balance</th>
     <th>Animal</th>
     <th>Character</th>
+    <th>Add Z's</th>
   </tr>
   <tr th:each="bank : ${bank}" th:style="${bank.isKing} eq true ? 'color: orange' : 'color: black'">
     <td th:text="${bankStat.index}">index</td>
@@ -23,6 +24,12 @@
     <td th:switch="${bank.isGood}">
       <span th:case="true" th:text="'Good One'">character</span>
       <span th:case="false" th:text="'Bad Guy'">character</span>
+    </td>
+    <td>
+      <form action="hit" th:object="${hitObject}">
+        <input type="hidden" id="hit" name="Add" value="10" />
+        <input type="hidden" id="bankIndex" name="accountIndex" th:value="${bankStat.index}" />
+      </form>
     </td>
   </tr>
   </tbody>
