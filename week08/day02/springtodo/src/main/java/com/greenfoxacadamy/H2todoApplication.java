@@ -8,13 +8,13 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SpringtodoApplication  implements CommandLineRunner{
+public class H2todoApplication implements CommandLineRunner{
 
 	@Autowired
 	TodoRepository repository;
 
 	public static void main(String[] args) {
-		SpringApplication.run(SpringtodoApplication.class, args);
+		SpringApplication.run(H2todoApplication.class, args);
 	}
 
 	@Override
