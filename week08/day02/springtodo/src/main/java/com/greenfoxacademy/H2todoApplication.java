@@ -1,7 +1,7 @@
-package com.greenfoxacadamy;
+package com.greenfoxacademy;
 
-import com.greenfoxacadamy.model.Todo;
-import com.greenfoxacadamy.repository.TodoRepository;
+import com.greenfoxacademy.model.Todo;
+import com.greenfoxacademy.repository.TodoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;

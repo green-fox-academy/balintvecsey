@@ -1,8 +1,7 @@
-package com.greenfoxacadamy.repository;
+package com.greenfoxacademy.repository;
 
-import com.greenfoxacadamy.model.Todo;
+import com.greenfoxacademy.model.Todo;
 import org.springframework.data.repository.CrudRepository;
-import org.springframework.stereotype.Component;
 
 /**
  * Created by Bálint on 2017. 05. 09..
