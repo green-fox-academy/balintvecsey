@@ -22,7 +22,7 @@ public class TodoController {
 
   @RequestMapping(value = "/list")
   public String list(Model model) {
-    model.addAttribute("todoslist", repository);
+    model.addAttribute("todos", repository.findAll());
     return "todo";
   }
 }
