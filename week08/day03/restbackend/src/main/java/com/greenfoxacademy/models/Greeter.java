@@ -8,10 +8,10 @@ import lombok.Setter;
  */
 @Getter
 @Setter
-public class MyError {
-  private String error;
+public class Greeter {
+  private String welcome_message;
 
-  public MyError(String description) {
-    this.error = description;
+  public Greeter(String greet) {
+    this.welcome_message = greet;
   }
 }
