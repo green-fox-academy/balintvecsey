@@ -76,8 +76,16 @@ public class MainRestController {
     ArrayHandler arrayHandler = new ArrayHandler();
     int result = 0;
     if (myArray.getWhat().equals("sum")) {
-
+      for (int number : myArray.getNumbers()) {
+        result += number;
+      }
+    } else if(myArray.getWhat().equals("multiply")) {
+      result = 1;
+      for (int number : myArray.getNumbers()) {
+        result *= number;
+      }
     }
+    arrayHandler.setResult(result);
     return arrayHandler;
   }
 }
