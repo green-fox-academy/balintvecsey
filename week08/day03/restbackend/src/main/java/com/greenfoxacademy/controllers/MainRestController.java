@@ -1,10 +1,12 @@
 package com.greenfoxacademy.controllers;
 
+import com.greenfoxacademy.models.AppendA;
 import com.greenfoxacademy.models.Doubling;
 import com.greenfoxacademy.models.Greeter;
 import com.greenfoxacademy.models.MyError;
 import org.springframework.web.bind.MissingServletRequestParameterException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -33,5 +35,10 @@ public class MainRestController {
   @RequestMapping(value = "/greeter", method = RequestMethod.GET)
   public Greeter greeter(@RequestParam(value = "name", required = true) String name, @RequestParam(value = "title", required = true) String title) {
     return new Greeter("Oh, hi there " + name + ", my dear " + title + "!");
+  }
+
+  @RequestMapping(value = "/appenda/{appendable}", method = RequestMethod.GET)
+  public AppendA appendA(@PathVariable String appendable) {
+    return new AppendA(appendable);
   }
 }

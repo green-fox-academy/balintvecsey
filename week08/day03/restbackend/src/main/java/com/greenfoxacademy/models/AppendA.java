@@ -8,10 +8,10 @@ import lombok.Setter;
  */
 @Getter
 @Setter
-public class MyError {
-  private String error;
+public class AppendA {
+  private String appended;
 
-  public MyError(String description) {
-    this.error = description;
+  public AppendA(String appendable) {
+    this.appended = appendable + "a";
   }
 }
