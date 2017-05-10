@@ -1,13 +1,15 @@
 package com.greenfoxacademy.controllers;
 
 import com.greenfoxacademy.models.AppendA;
-import com.greenfoxacademy.models.ArrayHandler;
-import com.greenfoxacademy.models.DoUntil;
+import com.greenfoxacademy.models.ArrayResult;
+import com.greenfoxacademy.models.IntResult;
 import com.greenfoxacademy.models.Doubling;
 import com.greenfoxacademy.models.Greeter;
 import com.greenfoxacademy.models.MyArray;
 import com.greenfoxacademy.models.MyError;
 import com.greenfoxacademy.models.Until;
+import java.util.ArrayList;
+import java.util.List;
 import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.web.bind.MissingServletRequestParameterException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -38,6 +40,11 @@ public class MainRestController {
     return new MyError("Please provide a number!");
   }
 
+  @ExceptionHandler(NullPointerException.class)
+  public MyError errorNullPointer() {
+    return new MyError("Please provide what to do with the numbers!");
+  }
+
   @RequestMapping(value = "/doubling", method = RequestMethod.GET)
   public Doubling doubling(@RequestParam(value = "input", required = true) int input) {
     return new Doubling(input);
@@ -54,8 +61,8 @@ public class MainRestController {
   }
 
   @RequestMapping(value = "/dountil/{what}", method = RequestMethod.POST)
-  public DoUntil doUntil(@PathVariable String what, @RequestBody Until until) {
-    DoUntil doUntil = new DoUntil();
+  public IntResult doUntil(@PathVariable String what, @RequestBody Until until) {
+    IntResult intResult = new IntResult();
     int result = 0;
     if (what.equals("sum")) {
       for (int i = 1; i <= until.getUntil(); i++) {
@@ -67,25 +74,37 @@ public class MainRestController {
         result *= i;
       }
     }
-    doUntil.setResult(result);
-    return doUntil;
+    intResult.setResult(result);
+    return intResult;
   }
 
   @RequestMapping(value = "/arrays", method = RequestMethod.POST)
-  public ArrayHandler arrayHandler(@RequestBody MyArray myArray) {
-    ArrayHandler arrayHandler = new ArrayHandler();
+  public Object arrayHandler(@RequestBody MyArray myArray) {
+    IntResult intResult = new IntResult();
+    ArrayResult arrayResult = new ArrayResult();
+    List<Integer> doubleNums = new ArrayList<>();
     int result = 0;
+
     if (myArray.getWhat().equals("sum")) {
       for (int number : myArray.getNumbers()) {
         result += number;
       }
+      intResult.setResult(result);
+      return intResult;
     } else if(myArray.getWhat().equals("multiply")) {
       result = 1;
       for (int number : myArray.getNumbers()) {
         result *= number;
       }
+      intResult.setResult(result);
+      return intResult;
+    } else if(myArray.getWhat().equals("double")) {
+      for (int number : myArray.getNumbers()) {
+        doubleNums.add(number * 2);
+      }
+      arrayResult.setResult(doubleNums);
+      return arrayResult;
     }
-    arrayHandler.setResult(result);
-    return arrayHandler;
+    return null;
   }
 }
