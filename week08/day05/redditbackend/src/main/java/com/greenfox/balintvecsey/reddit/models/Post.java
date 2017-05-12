@@ -2,12 +2,10 @@ package com.greenfox.balintvecsey.reddit.models;
 
 
 import java.sql.Timestamp;
-import javafx.geometry.Pos;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import lombok.Generated;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -27,12 +25,12 @@ public class Post {
   private Timestamp timestamp;
   private long score;
 
-  public Post() {}
+  public Post() {
+    timestamp = new Timestamp(System.currentTimeMillis());
+  }
 
-  public Post(String title, String href, Timestamp timestamp, long score) {
+  public Post(String title, String href) {
     this.title = title;
     this.href = href;
-    this.timestamp = timestamp;
-    this.score = score;
   }
 }

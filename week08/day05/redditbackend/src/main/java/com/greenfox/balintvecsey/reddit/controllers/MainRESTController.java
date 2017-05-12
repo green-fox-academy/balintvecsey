@@ -1,9 +1,12 @@
 package com.greenfox.balintvecsey.reddit.controllers;
 
+import com.greenfox.balintvecsey.reddit.models.Post;
 import com.greenfox.balintvecsey.reddit.models.PostList;
 import com.greenfox.balintvecsey.reddit.repository.PostRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -22,5 +25,11 @@ public class MainRESTController {
   public PostList getPostList() {
     postList.setPosts(postRepository.findAll());
     return postList;
+  }
+
+  @PostMapping ("/posts")
+  public Post addPost(@RequestBody Post post) {
+    postRepository.save(post);
+    return post;
   }
 }
