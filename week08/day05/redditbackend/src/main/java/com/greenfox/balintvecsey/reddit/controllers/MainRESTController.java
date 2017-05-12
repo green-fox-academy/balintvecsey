@@ -45,4 +45,12 @@ public class MainRESTController {
     postRepository.save(post);
     return post;
   }
+
+  @PutMapping ("/posts/{id}/downvote")
+  public Post downVote(@PathVariable Long id) {
+    post = postRepository.findOne(id);
+    post.setScore(post.getScore() - 1);
+    postRepository.save(post);
+    return post;
+  }
 }
