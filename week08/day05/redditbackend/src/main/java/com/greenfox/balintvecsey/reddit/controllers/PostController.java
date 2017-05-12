@@ -1,9 +1,10 @@
 package com.greenfox.balintvecsey.reddit.controllers;
 
 import com.greenfox.balintvecsey.reddit.models.Post;
-import com.greenfox.balintvecsey.reddit.models.PostList;
+import com.greenfox.balintvecsey.reddit.models.PostsList;
 import com.greenfox.balintvecsey.reddit.repository.PostRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -15,21 +16,20 @@ import org.springframework.web.bind.annotation.RestController;
  * Created by Bálint on 2017. 05. 12..
  */
 @RestController
-public class MainRESTController {
+@CrossOrigin("*")
+public class PostController {
 
   @Autowired
-  PostRepository postRepository;
-
+  private PostRepository postRepository;
   @Autowired
-  PostList postList;
-
+  private PostsList postsList;
   @Autowired
-  Post post;
+  private Post post;
 
   @GetMapping("/posts")
-  public PostList getPostList() {
-    postList.setPosts(postRepository.findAll());
-    return postList;
+  public PostsList getPostsList() {
+    postsList.setPosts(postRepository.findAll());
+    return postsList;
   }
 
   @PostMapping ("/posts")

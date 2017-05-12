@@ -4,9 +4,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class RedditbackendApplication{
+public class RedditApp {
 
 	public static void main(String[] args) {
-		SpringApplication.run(RedditbackendApplication.class, args);
+		SpringApplication.run(RedditApp.class, args);
 	}
 }

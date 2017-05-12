@@ -11,6 +11,6 @@ import org.springframework.stereotype.Component;
 @Component
 @Getter
 @Setter
-public class PostList {
+public class PostsList {
   List<Post> posts;
 }
