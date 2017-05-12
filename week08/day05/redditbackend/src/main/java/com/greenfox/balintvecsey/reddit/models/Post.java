@@ -2,6 +2,12 @@ package com.greenfox.balintvecsey.reddit.models;
 
 
 import java.sql.Timestamp;
+import javafx.geometry.Pos;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import lombok.Generated;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -10,17 +16,23 @@ import lombok.Setter;
  */
 @Getter
 @Setter
+@Entity
 public class Post {
+
+  @Id
+  @GeneratedValue(strategy = GenerationType.AUTO)
   private long id;
-  private String title, href;
+  private String title;
+  private String href;
   private Timestamp timestamp;
   private long score;
 
-  public Post(long id, String title, String href, Timestamp timestamp, long score) {
-    this.id = id;
+  public Post() {}
+
+  public Post(String title, String href, Timestamp timestamp, long score) {
     this.title = title;
     this.href = href;
-    timestamp = new Timestamp(System.currentTimeMillis() / 1000);
+    this.timestamp = timestamp;
     this.score = score;
   }
 }
