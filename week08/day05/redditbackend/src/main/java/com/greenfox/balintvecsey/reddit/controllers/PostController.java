@@ -1,15 +1,17 @@
 package com.greenfox.balintvecsey.reddit.controllers;
 
 import com.greenfox.balintvecsey.reddit.models.Post;
-import com.greenfox.balintvecsey.reddit.models.PostsList;
 import com.greenfox.balintvecsey.reddit.service.RedditService;
+import java.util.HashMap;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -20,16 +22,16 @@ import org.springframework.web.bind.annotation.RestController;
 public class PostController {
 
   @Autowired
-  RedditService redditService;
+  private RedditService redditService;
 
   @GetMapping("/posts")
-  public PostsList getPostsList() {
+  public HashMap<String, Iterable<Post>> listAllPosts() {
     return redditService.listAll();
   }
 
   @PostMapping ("/posts")
-  public Post addPost(@RequestBody Post post) {
-    return redditService.addPost(post);
+  public Post addPost(@RequestHeader(value = "Username") String username, @RequestBody Post post) {
+    return redditService.addPost(username, post);
   }
 
   @PutMapping ("/posts/{id}/upvote")
@@ -40,5 +42,15 @@ public class PostController {
   @PutMapping ("/posts/{id}/downvote")
   public Post downVote(@PathVariable Long id) {
     return redditService.downVote(id);
+  }
+
+  @DeleteMapping("/posts/{id}")
+  public Post removePost(@PathVariable Long id) {
+    return redditService.remove(id);
+  }
+
+  @PostMapping ("/posts/{id}")
+  public Post editPost(@PathVariable Long id, @RequestBody Post post) {
+    return redditService.edit(id, post);
   }
 }

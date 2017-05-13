@@ -1,15 +1,17 @@
 package com.greenfox.balintvecsey.reddit.models;
 
+import javax.persistence.Entity;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.stereotype.Component;
 
 /**
- * Created by Bálint on 2017. 05. 12..
+ * Created by Bálint on 2017. 05. 13..
  */
-@Component
 @Getter
 @Setter
-public class PostsList {
-  Iterable<Post> posts;
+public class Vote {
+  private long userId;
+  private long postId;
+  int vote;
 }

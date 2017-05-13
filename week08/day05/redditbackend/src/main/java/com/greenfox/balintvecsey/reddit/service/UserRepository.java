@@ -1,13 +1,13 @@
 package com.greenfox.balintvecsey.reddit.service;
 
-import com.greenfox.balintvecsey.reddit.models.Post;
+import com.greenfox.balintvecsey.reddit.models.User;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Component;
 
 /**
- * Created by Bálint on 2017. 05. 12..
+ * Created by Bálint on 2017. 05. 13..
  */
 @Component
-public interface PostRepository extends CrudRepository<Post, Long> {
+public interface UserRepository extends CrudRepository<User, Long> {
 
 }

@@ -6,6 +6,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.stereotype.Component;
@@ -13,10 +17,10 @@ import org.springframework.stereotype.Component;
 /**
  * Created by Bálint on 2017. 05. 12..
  */
+@Component
 @Getter
 @Setter
 @Entity
-@Component
 public class Post {
 
   @Id
@@ -26,6 +30,11 @@ public class Post {
   private String href;
   private Timestamp timestamp;
   private long score;
+  private String owner;
+
+//  @ManyToOne
+//  @JoinColumn(name = "owner")
+//  private User user;
 
   public Post() {
     timestamp = new Timestamp(System.currentTimeMillis());
