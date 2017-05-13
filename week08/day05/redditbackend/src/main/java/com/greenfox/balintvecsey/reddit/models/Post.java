@@ -30,9 +30,4 @@ public class Post {
   public Post() {
     timestamp = new Timestamp(System.currentTimeMillis());
   }
-
-  public Post(String title, String href) {
-    this.title = title;
-    this.href = href;
-  }
 }

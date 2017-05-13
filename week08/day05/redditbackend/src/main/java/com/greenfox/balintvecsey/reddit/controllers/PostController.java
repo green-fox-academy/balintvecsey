@@ -2,7 +2,7 @@ package com.greenfox.balintvecsey.reddit.controllers;
 
 import com.greenfox.balintvecsey.reddit.models.Post;
 import com.greenfox.balintvecsey.reddit.models.PostsList;
-import com.greenfox.balintvecsey.reddit.repository.PostRepository;
+import com.greenfox.balintvecsey.reddit.service.RedditService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,37 +20,25 @@ import org.springframework.web.bind.annotation.RestController;
 public class PostController {
 
   @Autowired
-  private PostRepository postRepository;
-  @Autowired
-  private PostsList postsList;
-  @Autowired
-  private Post post;
+  RedditService redditService;
 
   @GetMapping("/posts")
   public PostsList getPostsList() {
-    postsList.setPosts(postRepository.findAll());
-    return postsList;
+    return redditService.listAll();
   }
 
   @PostMapping ("/posts")
   public Post addPost(@RequestBody Post post) {
-    postRepository.save(post);
-    return post;
+    return redditService.addPost(post);
   }
 
   @PutMapping ("/posts/{id}/upvote")
   public Post upVote(@PathVariable Long id) {
-    post = postRepository.findOne(id);
-    post.setScore(post.getScore() + 1);
-    postRepository.save(post);
-    return post;
+    return redditService.upVote(id);
   }
 
   @PutMapping ("/posts/{id}/downvote")
   public Post downVote(@PathVariable Long id) {
-    post = postRepository.findOne(id);
-    post.setScore(post.getScore() - 1);
-    postRepository.save(post);
-    return post;
+    return redditService.downVote(id);
   }
 }
