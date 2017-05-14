@@ -1,6 +1,5 @@
 package com.greenfox.balintvecsey.reddit.models;
 
-import javax.jws.soap.SOAPBinding.Use;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -12,6 +11,7 @@ import org.springframework.stereotype.Component;
 /**
  * Created by Bálint on 2017. 05. 12..
  */
+@Component
 @Entity
 @Getter
 @Setter

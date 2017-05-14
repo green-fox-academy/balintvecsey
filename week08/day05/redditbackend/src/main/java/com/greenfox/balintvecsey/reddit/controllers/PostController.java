@@ -45,12 +45,12 @@ public class PostController {
   }
 
   @DeleteMapping("/posts/{id}")
-  public Post removePost(@PathVariable Long id) {
-    return redditService.remove(id);
+  public Post removePost(@RequestHeader(value = "Username") String username, @PathVariable Long id) {
+    return redditService.remove(username, id);
   }
 
-  @PostMapping ("/posts/{id}")
-  public Post editPost(@PathVariable Long id, @RequestBody Post post) {
-    return redditService.edit(id, post);
+  @PutMapping ("/posts/{id}")
+  public Post editPost(@RequestHeader(value = "Username") String username, @PathVariable Long id, @RequestBody Post post) {
+    return redditService.edit(username, id, post);
   }
 }

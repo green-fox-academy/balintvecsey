@@ -1,6 +1,7 @@
 package com.greenfox.balintvecsey.reddit.service;
 
 import com.greenfox.balintvecsey.reddit.models.Post;
+import com.greenfox.balintvecsey.reddit.models.User;
 import java.util.HashMap;
 import lombok.Getter;
 import lombok.Setter;
@@ -14,12 +15,18 @@ import org.springframework.stereotype.Component;
 @Getter
 @Setter
 public class RedditService {
+
   @Autowired
   private UserRepository userRepository;
+
   @Autowired
   private PostRepository postRepository;
+
   @Autowired
   private Post post;
+
+  @Autowired
+  private User user;
 
   public RedditService() {}
 
@@ -30,7 +37,8 @@ public class RedditService {
   }
 
   public Post addPost(String username, Post post) {
-    post.setOwner(username);
+    user = userRepository.findByUsername(username);
+    post.setOwner(user);
     postRepository.save(post);
     return post;
   }
@@ -49,18 +57,24 @@ public class RedditService {
     return post;
   }
 
-  public Post remove(Long id) {
+  public Post remove(String username, Long id) {
+    user = userRepository.findByUsername(username);
     post = postRepository.findOne(id);
-    postRepository.delete(post);
+    if (post.getOwner().equals(user)) {
+      postRepository.delete(post);
+    }
     return post;
   }
 
-  public Post edit(Long id, Post postReq) {
+  public Post edit(String username, Long id, Post postReq) {
+    user = userRepository.findByUsername(username);
     post = postRepository.findOne(id);
-    post.setTitle(postReq.getTitle());
-    post.setHref(postReq.getHref());
-    post.setTimestamp(postReq.getTimestamp());
-    postRepository.save(post);
+    if (post.getOwner().equals(user)) {
+      post.setTitle(postReq.getTitle());
+      post.setHref(postReq.getHref());
+      post.setTimestamp(postReq.getTimestamp());
+      postRepository.save(post);
+    }
     return post;
   }
 }
