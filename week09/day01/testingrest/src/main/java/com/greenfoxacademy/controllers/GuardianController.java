@@ -3,7 +3,6 @@ package com.greenfoxacademy.controllers;
 import com.greenfoxacademy.models.GrootMessage;
 import com.greenfoxacademy.models.MyError;
 import com.greenfoxacademy.models.YonduArrow;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.MissingServletRequestParameterException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -23,7 +22,6 @@ public class GuardianController {
     } else {
       return new MyError("Please provide a " + e.getParameterName() + "!");
     }
-
   }
 
   @GetMapping("/groot")
