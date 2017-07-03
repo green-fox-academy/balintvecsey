@@ -19,8 +19,14 @@ namespace PracticeTasks
             };
             Console.WriteLine();
 
-            double OddNumbersAvg = n.Where(i => i % 2 != 0).Average();
-            Console.WriteLine(OddNumbersAvg);
+            double OddNumbersAverage = n.Where(i => i % 2 != 0).Average();
+            Console.WriteLine(OddNumbersAverage);
+
+            IEnumerable<int> PositiveNumbers = n.Where(i => i >= 0);
+            foreach (int i in PositiveNumbers)
+            {
+                Console.Write(Math.Pow(i, 2) + " ");
+            };
 
             Console.ReadLine();
         }
