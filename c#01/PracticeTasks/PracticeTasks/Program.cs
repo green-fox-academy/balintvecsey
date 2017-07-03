@@ -17,7 +17,12 @@ namespace PracticeTasks
             {
                 Console.Write(i + " ");
             };
-            Console.ReadKey();
+            Console.WriteLine();
+
+            double OddNumbersAvg = n.Where(i => i % 2 != 0).Average();
+            Console.WriteLine(OddNumbersAvg);
+
+            Console.ReadLine();
         }
     }
 }
