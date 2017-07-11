@@ -46,5 +46,15 @@ namespace TestingExercises.Tests
 
             Assert.IsTrue(anagram.IsAnagram(word1, word2));
         }
+
+        [TestMethod()]
+        [ExpectedException(typeof(NullReferenceException))]
+        public void TestAnagramWithNull()
+        {
+            word1 = "aLMa";
+            word2 = null;
+
+            anagram.IsAnagram(word1, word2);
+        }
     }
 }
