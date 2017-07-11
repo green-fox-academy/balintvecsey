@@ -23,8 +23,8 @@ namespace TestingExercises
     {
         public bool IsAnagram(string word1, string word2)
         {
-            char[] chars1 = word1.ToCharArray();
-            char[] chars2 = word2.ToCharArray();
+            char[] chars1 = word1.ToLower().ToCharArray();
+            char[] chars2 = word2.ToLower().ToCharArray();
 
             Array.Sort(chars1);
             Array.Sort(chars2);
