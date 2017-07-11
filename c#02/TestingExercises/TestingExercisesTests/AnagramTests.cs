@@ -21,10 +21,28 @@ namespace TestingExercises.Tests
         }
 
         [TestMethod()]
-        public void TestWithAnagram()
+        public void TestAnagramTrue()
         {
             word1 = "alma";
             word2 = "lama";
+
+            Assert.IsTrue(anagram.IsAnagram(word1, word2));
+        }
+
+        [TestMethod()]
+        public void TestAnagramFalse()
+        {
+            word1 = "palma";
+            word2 = "lama";
+
+            Assert.IsFalse(anagram.IsAnagram(word1, word2));
+        }
+
+        [TestMethod()]
+        public void TestAnagramUppercaseLetters()
+        {
+            word1 = "aLMa";
+            word2 = "lAmA";
 
             Assert.IsTrue(anagram.IsAnagram(word1, word2));
         }

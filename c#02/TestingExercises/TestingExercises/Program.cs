@@ -10,10 +10,11 @@ namespace TestingExercises
     {
         static void Main(string[] args)
         {
+            Anagram anagram = new Anagram();
             string word1 = "alma";
             string word2 = "lama";
 
-            //Console.WriteLine(Anagram.IsAnagram(word1, word2));
+            Console.WriteLine(anagram.IsAnagram(word1, word2));
             Console.ReadLine();
         }
     }
