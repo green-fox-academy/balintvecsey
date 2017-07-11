@@ -45,13 +45,35 @@ namespace TestingExercises
                 if (occurrence.ContainsKey(letter))
                 {
                     occurrence[letter] = occurrence[letter] + 1;
-                } else
+                }
+                else
                 {
                     occurrence[letter] = 1;
                 }
             }
 
             return occurrence;
+        }
+    }
+
+    public class Fibonucci
+    {
+        public int Fibonum(int number)
+        {
+            if (number < 0)
+            {
+                return -1;
+            }
+            else if (number == 0)
+            {
+                return 0;
+            }
+            else if (number == 1)
+            {
+                return 1;
+            }
+
+            return Fibonum(number - 1) + Fibonum(number - 2);
         }
     }
 }

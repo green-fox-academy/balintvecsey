@@ -79,10 +79,45 @@ namespace TestingExercises.Tests
             test.Add('a', 2);
             test.Add('l', 1);
             test.Add('m', 1);
-            
+
             Assert.AreEqual(test['a'], test2['a']);
             Assert.AreEqual(test['l'], test2['l']);
             Assert.AreEqual(test['m'], test2['m']);
+        }
+    }
+
+    [TestClass()]
+    public class FibonacciTests
+    {
+        Fibonucci number;
+
+        public FibonacciTests()
+        {
+            number = new Fibonucci();
+        }
+
+        [TestMethod()]
+        public void TestWith1()
+        {
+            Assert.AreEqual(1, number.Fibonum(1));
+        }
+
+        [TestMethod()]
+        public void TestWith2()
+        {
+            Assert.AreEqual(1, number.Fibonum(2));
+        }
+
+        [TestMethod()]
+        public void TestWithN()
+        {
+            Assert.AreEqual(1597, number.Fibonum(17));
+        }
+
+        [TestMethod()]
+        public void TestWithNegative()
+        {
+            Assert.AreEqual(-1, number.Fibonum(-7));
         }
     }
 }
