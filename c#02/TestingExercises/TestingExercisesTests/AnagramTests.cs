@@ -57,4 +57,32 @@ namespace TestingExercises.Tests
             anagram.IsAnagram(word1, word2);
         }
     }
+
+    [TestClass()]
+    public class CountTests
+    {
+        Count count;
+        Dictionary<char, long> test;
+        string word;
+
+        public CountTests()
+        {
+            count = new Count();
+            test = new Dictionary<char, long>();
+        }
+
+        [TestMethod()]
+        public void TestCountLetters()
+        {
+            word = "alma";
+            Dictionary<char, long> test2 = count.CountLetters(word);
+            test.Add('a', 2);
+            test.Add('l', 1);
+            test.Add('m', 1);
+            
+            Assert.AreEqual(test['a'], test2['a']);
+            Assert.AreEqual(test['l'], test2['l']);
+            Assert.AreEqual(test['m'], test2['m']);
+        }
+    }
 }

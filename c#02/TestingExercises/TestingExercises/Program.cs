@@ -11,12 +11,10 @@ namespace TestingExercises
         static void Main(string[] args)
         {
             Anagram anagram = new Anagram();
-            Count count = new Count();
             string word1 = "alma";
             string word2 = "lama";
 
             Console.WriteLine(anagram.IsAnagram(word1, word2));
-            Console.WriteLine(count.CountLetters(word1));
             Console.ReadLine();
         }
     }
@@ -37,9 +35,9 @@ namespace TestingExercises
 
     public class Count
     {
-        public Dictionary<Char, Int64> CountLetters(String word)
+        public Dictionary<char, long> CountLetters(String word)
         {
-            Dictionary<Char, Int64> occurrence = new Dictionary<char, long>();
+            Dictionary<char, long> occurrence = new Dictionary<char, long>();
             char[] chars = word.ToCharArray();
 
             foreach(char letter in chars)
