@@ -2,6 +2,7 @@ public class Algorithm {
 
   public static void main(String[] args) {
     System.out.println(sumOfTheMultiplesOf3and5(1000));
+    System.out.println(sumOfTheEvenFibonacciNumbers());
   }
 
   public static int sumOfTheMultiplesOf3and5(int range) {
@@ -13,5 +14,30 @@ public class Algorithm {
       }
     }
     return sum;
+  }
+
+  public static long sumOfTheEvenFibonacciNumbers() {
+    long sum = 0;
+
+    for (long i = 1; i < 34; i++) {
+      long currentFibonum = fibonum(i);
+
+      if (currentFibonum % 2 == 0) {
+        sum += currentFibonum;
+      }
+    }
+    return sum;
+  }
+
+  public static int fibonum(long n) {
+    if (n < 0) {
+      return -1;
+    } else if (n == 0) {
+      return 0;
+    } else if (n == 1) {
+      return 1;
+    } else {
+      return fibonum(n - 1) + fibonum(n - 2);
+    }
   }
 }
