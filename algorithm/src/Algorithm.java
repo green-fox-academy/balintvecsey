@@ -16,10 +16,10 @@ public class Algorithm {
     return sum;
   }
 
-  public static long sumOfTheEvenFibonacciNumbers() {
-    long sum = 0;
+  public static int sumOfTheEvenFibonacciNumbers() {
+    int sum = 0;
 
-    for (long i = 1; i < 34; i++) {
+    for (int i = 1; i < 34; i++) {
       long currentFibonum = fibonum(i);
 
       if (currentFibonum % 2 == 0) {
@@ -29,7 +29,7 @@ public class Algorithm {
     return sum;
   }
 
-  public static int fibonum(long n) {
+  public static int fibonum(int n) {
     if (n < 0) {
       return -1;
     } else if (n == 0) {
