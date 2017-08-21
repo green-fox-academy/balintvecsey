@@ -1,0 +1,28 @@
+Important:
+1. HTML & CSS
+https://github.com/greenfox-academy/teaching-materials/tree/master/workshop/ui-development/intro
+
+2. Dig Deeper in CSS
+https://github.com/greenfox-academy/teaching-materials/tree/master/workshop/ui-development/css-selectors-attributes
+
+3. Layout
+https://github.com/greenfox-academy/teaching-materials/tree/master/workshop/ui-development/layout
+
+4. Advanced CSS Colors & Styling
+https://github.com/greenfox-academy/teaching-materials/tree/master/workshop/ui-development/advanced-styling
+
+Other:
+5. HTML Forms
+https://github.com/greenfox-academy/teaching-materials/tree/master/workshop/ui-development/forms
+
+6. HTML Tables
+https://github.com/greenfox-academy/teaching-materials/tree/master/workshop/ui-development/tables
+
+7. CSS Animation
+https://github.com/greenfox-academy/teaching-materials/tree/master/workshop/ui-development/css-animation
+
+8. Semantics, Metadata
+https://github.com/greenfox-academy/teaching-materials/tree/master/workshop/ui-development/semantics-metadata
+
+9. Clean CSS
+https://github.com/greenfox-academy/teaching-materials/tree/master/workshop/ui-development/clean-css

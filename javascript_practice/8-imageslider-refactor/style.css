@@ -1,0 +1,124 @@
+/*van Gogh color palette {
+  sunflowers: #ffce00;
+  starry night: #0375b4;
+  irises: #007849;
+  evening: #262228;
+}*/
+
+html {
+  height: 100%;
+  /*I haven't decided yet which gradient style is better*/
+  /*background: linear-gradient(to right, #333 1%, #346135 50%, #333 99%);*/
+  background: radial-gradient(#007849 85%, #262228);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: helvetica;
+}
+
+h1 {
+  text-align: center;
+  font-size: 56px;
+  color: #ffce00;
+  margin: 12px auto;
+  text-shadow: 1px 1px 2px rgba(40, 40, 40, 0.6);
+}
+
+h2, p {
+  margin: 20px;
+  color: #fff;
+}
+
+.main {
+  width: 868px;
+  height: 432px;
+  background: #333;
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.button {
+  width: 50px;
+  height: 100%;
+  cursor: pointer;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 2px 2px 4px 2px rgba(40, 40, 40, 0.6);
+  background: linear-gradient(#ffdb4d, #ffce00);
+}
+
+.button:active {
+  background: linear-gradient(#ffce00, #ffdb4d);
+  box-shadow: inset 2px 2px 4px 2px rgba(40, 40, 40, 0.6);
+}
+
+.arrow {
+  content: url('assets/arrow.svg');
+}
+
+.arrow:active {
+  content: url('assets/arrow-active.svg') ;
+}
+
+.left {
+
+}
+
+.other {
+  transform: scaleX(-1);
+}
+
+.gallery {
+  position: relative;
+  width: 768px;
+  height: 432px;
+  background: blue;
+  /*box-shadow: 2px 2px 4px -2px rgba(40, 40, 40, 0.6);*/
+}
+
+.large {
+  width: 768px;
+  height: 432px;
+
+}
+
+.description {
+  position: absolute;
+  bottom: 0;
+  height: 120px;
+  width: 768px;
+  background: rgba(38, 34, 40, 0.8);
+}
+
+.thumbnail {
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.list {
+  width: 72px;
+  height: 72px;
+  margin: auto 10px;
+  background: red;
+  list-style: none;
+}
+
+.small {
+  width: 72px;
+  height: 72px;
+  object-fit: cover;
+  box-shadow: 5px 5px 4px 2px rgba(40, 40, 40, 0.6);
+  /*outline: 5px solid #ffdb4d;*/
+  outline: 5px solid #aaa;
+}
+
+.small:hover {
+  outline: 5px solid #ffce00;
+}
+
+/*#active {
+  outline: 5px solid #ffdb4d;
+}*/

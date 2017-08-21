@@ -1,0 +1,62 @@
+Workshops:
+1. Expressions and Control flow
+https://github.com/greenfox-academy/teaching-materials/blob/master/workshop/expressions-and-control-flow/javascript.md
+
+2. Functions and Arrays
+https://github.com/greenfox-academy/teaching-materials/blob/master/workshop/functions-and-arrays/javascript.md
+
+3. Data structures and practice
+https://github.com/greenfox-academy/teaching-materials/blob/master/workshop/data-structures/javascript.md
+
+4. Document object model – DOM
+https://github.com/greenfox-academy/teaching-materials/tree/master/workshop/dom
+
+Project - JavaScript image slider
+--------------------------------------------------------------------------------
+
+5. Advanced JavaScript part 1.
+https://github.com/greenfox-academy/teaching-materials/tree/master/workshop/advanced-js-01
+
+6. Callbacks
+https://github.com/greenfox-academy/teaching-materials/tree/master/workshop/advanced-js-02
+
+7. XHR - Talking to a server
+https://github.com/greenfox-academy/teaching-materials/tree/master/workshop/xhr
+
+Project - The Reddit: Frontend
+--------------------------------------------------------------------------------
+
+8. Exception Handling and Testing JavaScript Applications with Tape
+https://github.com/greenfox-academy/teaching-materials/blob/master/workshop/testing/javascript.md
+
+9. REST Backend
+https://github.com/greenfox-academy/teaching-materials/blob/master/workshop/rest-backend/javascript.md
+
+10. Node.js and MySQL
+https://github.com/greenfox-academy/teaching-materials/blob/master/workshop/sql-backend/javascript.md
+
+Project - The Reddit: Javascript REST backend
+--------------------------------------------------------------------------------
+
+11. Closure, Prototype, Design Patterns
+https://github.com/greenfox-academy/teaching-materials/tree/master/workshop/advanced-js-03
+
+Project - Fullstack TODO application
+Project - Foxplayer (full stack project)
+--------------------------------------------------------------------------------
+
+Projects:
+1. JavaScript image slider
+https://github.com/greenfox-academy/teaching-materials/tree/master/project/gallery
+
+2. The Reddit: Frontend
+https://github.com/greenfox-academy/teaching-materials/tree/master/project/reddit/frontend
+
+3. The Reddit: Javascript REST backend
+https://github.com/greenfox-academy/teaching-materials/blob/master/project/reddit/backend/javascript.md
+
+4. Fullstack TODO application
+https://github.com/greenfox-academy/teaching-materials/tree/master/project/todo-fullstack
+
+5. Foxplayer (full stack project)
+https://github.com/greenfox-academy/teaching-materials/tree/master/project/music-player

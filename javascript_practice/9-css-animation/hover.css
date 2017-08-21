@@ -1,0 +1,51 @@
+html {
+  background: #444;
+}
+
+.container {
+  width: 200px;
+  height: 200px;
+  position: relative;
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  border-radius: 3px;
+  background-color: white;
+  position: absolute;
+  top: 52px;
+  left: 52px;
+  cursor: pointer;
+  user-select: none;
+  transform: rotate(45deg);
+}
+
+/*.box:hover {
+  color: #ff3355;
+}*/
+
+.border {
+  width: 100px;
+  height: 100px;
+  border-radius: 3px;
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  border: 2px solid #ff3355;
+  transform: rotate(-45deg);
+  transition: 1s;
+}
+
+.border:hover {
+  transform: rotate(0deg);
+}
+
+p {
+  font-family: helvetica;
+  letter-spacing: 2;
+  font-weight: bold;
+  color: #444;
+  text-transform: uppercase;
+  transform: rotate(-45deg);
+}

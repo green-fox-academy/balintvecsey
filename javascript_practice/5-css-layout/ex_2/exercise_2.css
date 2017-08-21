@@ -1,0 +1,15 @@
+.container {
+  width: 700px;
+  height: 300px;
+  display: flex;
+  background: #FFD72A;
+  flex: 2;
+}
+
+.item {
+  width: 100px;
+  height: 100px;
+  align-self: center;
+  margin: auto;
+  background: #AF2AFF;
+}

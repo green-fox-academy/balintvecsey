@@ -1,0 +1,65 @@
+.container {
+  width: 1000px;
+  height: 100%;
+  display: flex;
+}
+
+.button {
+  width: 250px;
+  height: 75px;
+  margin-right: 10px;
+  border-radius: 6px;
+  font-size: 36px;
+  font-family: helvetica;
+  display: inherit;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  box-shadow: 2px 2px 4px 2px rgba(40, 40, 40, 0.6);
+  text-shadow: 1px 1px 2px rgba(40, 40, 40, 0.6);
+}
+
+.button:active {
+  color: #aaa;
+  box-shadow: inset 2px 2px 4px 2px rgba(40, 40, 40, 0.6);
+  text-shadow: inset 1px 1px 2px rgba(40, 40, 40, 0.6);
+}
+
+.first {
+  color: grey;
+  background: linear-gradient(#eee, #ccc);
+}
+
+.first:hover {
+  background: linear-gradient(#ccc, #eee);
+}
+
+.first:active {
+  color: #bbb;
+}
+
+.second {
+  color: #e8f8fd;
+  background: linear-gradient(#17B4E0, #178CAE);
+}
+
+.second:hover {
+  background: linear-gradient(#178CAE, #17B4E0);
+}
+
+.second:active {
+  color: #0f708a;
+}
+
+.third {
+  color: #f5fce9;
+  background: linear-gradient(#8FCC17, #6F9E1A);
+}
+
+.third:hover {
+  background: linear-gradient(#6F9E1A, #8FCC17);
+}
+
+.third:active {
+  color: #5d8415;
+}
