@@ -12,13 +12,27 @@
 //    with the stored petrol amount as a parameter, then decrement the used petrol
 //  - Initialize the petrol amount to 3000
 
+let car = {
+  petrolLevel: 0,
+  petrolCapacity: 50,
+  refill: function(amount) {
+    let consumed = this.petrolCapacity - this.petrolLevel;
+    if(consumed > amount) {
+      this.petrolLevel += amount;
+      return amount;
+    }
 
+    this.petrolLevel += consumed;
+    return consumed;
+  }
+};
 
-
-
-
-
-
+let station = {
+  petrolStorage: 3000,
+  provide: function(car) {
+    this.petrolStorage -= car.refill(this.petrolStorage);
+  }
+};
 
 console.log(car.petrolLevel);
 console.log(station.petrolStorage);
