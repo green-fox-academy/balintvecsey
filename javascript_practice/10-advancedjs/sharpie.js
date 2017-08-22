@@ -9,5 +9,6 @@ function Sharpie(color, width) {
 
 let redSharpie = new Sharpie('red', 10);
 console.log(redSharpie.inkAmount);
+
 redSharpie.use();
 console.log(redSharpie.inkAmount);
