@@ -15,8 +15,8 @@ function addCandy() {
 function addLollypop() {
   if(currentCandies >= 100) {
     countLollypops.innerHTML += '🍭';
-    countCandies.innerHTML = 0;
-    currentCandies = 0;
+    currentCandies -= 100;
+    countCandies.innerHTML = currentCandies;
   }
 }
 
