@@ -12,3 +12,15 @@ var fruits = [
 // Create a new array of consists numbers that shows how many times the 'e' letter
 // occurs in the word stored under the same index at the fruits array!
 // Please use the map method.
+
+let howManyE = fruits.map(function(x){
+  let countE = 0;
+  for (let i = 0; i < x.length; i++) {
+    if(x.charAt(i) === 'e') {
+      countE++;
+    }
+  }
+  return countE;
+});
+
+console.log(howManyE);
